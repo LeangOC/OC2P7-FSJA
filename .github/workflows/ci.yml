@@ -51,9 +51,7 @@ jobs:
   frontend:
 
     name: Build Frontend
-
     runs-on: ubuntu-latest
-
     timeout-minutes: 20
 
     defaults:
@@ -80,3 +78,34 @@ jobs:
 
       - name: Run Angular tests
         run: npm test -- --watch=false --browsers=ChromeHeadless
+
+  sonar:
+
+    name: SonarCloud Analysis
+
+    runs-on: ubuntu-latest
+
+    needs:
+      - backend
+      - frontend
+
+    timeout-minutes: 20
+
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarqube-scan-action@v5
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
