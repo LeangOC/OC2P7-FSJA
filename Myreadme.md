@@ -5,7 +5,7 @@
 - http://localhost:4200/  : ![main_page_acceuil.png](misc/screenshots/main_page_acceuil.png)
 
 ### develop < main
-1. Implémentation ci.yml :
+1. Implémentation ci.yml : phase 1
    - Un pipeline CI opérationnel dans GitHub Actions :  ![CI_Operationnel.png](misc/screenshots/CI_Operationnel.png)
    - Les tests existants sont exécutés automatiquement :    
            backend    
@@ -13,3 +13,9 @@
   
       frontend   
       ![Tests_Frontend.png](misc/screenshots/Tests_Frontend.png)  
+
+2. refactor ci.yml: phase 2
+   -  SonarCloud analysis : sonar-project.properties
+      ![SonarCloud_Analysis.png](misc/screenshots/SonarCloud_Analysis.png)
+      ![sonarCloud_Analysis_Success.png](misc/screenshots/sonarCloud_Analysis_Success.png)
+      ![SonarCloud_Analysis_Project.png](misc/screenshots/SonarCloud_Analysis_Project.png)
