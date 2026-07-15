@@ -19,3 +19,7 @@
       ![SonarCloud_Analysis.png](misc/screenshots/SonarCloud_Analysis.png)
       ![sonarCloud_Analysis_Success.png](misc/screenshots/sonarCloud_Analysis_Success.png)
       ![SonarCloud_Analysis_Project.png](misc/screenshots/SonarCloud_Analysis_Project.png)
+
+### develop1
+1. Dockerfile : back/Dockerfile 
+   - Création image Docker miscrocrm : $ docker build -t microcrm-back ./back
