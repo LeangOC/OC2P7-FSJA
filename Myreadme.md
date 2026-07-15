@@ -21,5 +21,14 @@
       ![SonarCloud_Analysis_Project.png](misc/screenshots/SonarCloud_Analysis_Project.png)
 
 ### develop1
-1. Dockerfile : back/Dockerfile 
-   - Création image Docker miscrocrm : $ docker build -t microcrm-back ./back
+1. Dockerfile : back/Dockerfile , back/.dockerignore
+   - Création image Docker microcrm-back : $ docker build -t microcrm-back ./back
+   - $ docker images | grep micro
+     > microcrm-back:latest       9526fe944064        465MB          136MB
+   
+
+### develop2
+1. Dockerfile : front/Dockerfile , front/.dockerignore
+- docker build -t microcrm-front ./front
+- $ docker images | grep micro
+  > microcrm-front:latest            59c07ac44ee2       74.1MB         21.1MB
