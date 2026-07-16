@@ -8,7 +8,7 @@ WORKDIR /app
 
 # Copie de l'ensemble du projet backend
 COPY . .
-
+RUN chmod +x gradlew
 # Construction de l'application sans relancer les tests
 RUN ./gradlew clean build -x test
 
