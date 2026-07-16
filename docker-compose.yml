@@ -1,0 +1,38 @@
+services:
+
+  backend:
+    build:
+      context: ./back
+      dockerfile: Dockerfile
+
+    container_name: microcrm-back
+
+    ports:
+      - "8080:8080"
+
+    restart: unless-stopped
+
+    networks:
+      - microcrm-network
+
+  frontend:
+    build:
+      context: ./front
+      dockerfile: Dockerfile
+
+    container_name: microcrm-front
+
+    ports:
+      - "80:80"
+
+    depends_on:
+      - backend
+
+    restart: unless-stopped
+
+    networks:
+      - microcrm-network
+
+networks:
+  microcrm-network:
+    driver: bridge

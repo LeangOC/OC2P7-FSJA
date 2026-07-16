@@ -32,3 +32,13 @@
 - docker build -t microcrm-front ./front
 - $ docker images | grep micro
   > microcrm-front:latest            59c07ac44ee2       74.1MB         21.1MB
+
+### develop3
+1. Implémentation : docker-compose.yml
+- $ docker compose up --build
+- $ docker compose ps :  
+ ![Docker_Containers_microcrm.png](misc/screenshots/Docker_Containers_microcrm.png)
+
+### develop4
+1. Un pipeline CD opérationnel
+- Refactor : ci.yml
