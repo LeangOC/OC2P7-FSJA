@@ -44,5 +44,11 @@
 - Refactor : ci.yml
 
 ### develop_save_before_CD
+- Sauvegard de la branche develop avant la pipeline CD
 
 ### develop merge from develop4
+- site sonarCloud incident Http 504 : désactiver le job sonaCloud dans le ci.yml
+- Erreur d'exécution fichier gradlew : correction Dockerfile ( chmod +x ) 
+- Publication CD dans Docker Hub :
+  ![CD_Docker_Hub.png](misc/screenshots/CD_Docker_Hub.png)
+- Réactivation du job sonarCloud

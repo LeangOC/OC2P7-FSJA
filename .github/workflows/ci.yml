@@ -68,10 +68,10 @@ jobs:
       ####################################################
       # Désactivé temporairement :
       # Incident SonarCloud (HTTP 504 sur /analysis/jres)
-      #- name: SonarCloud Scan
-      #  uses: SonarSource/sonarqube-scan-action@v6
-      #  env:
-      #    SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarqube-scan-action@v6
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
   ########################################################
   # Continuous Deployment
