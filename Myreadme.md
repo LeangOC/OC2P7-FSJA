@@ -52,3 +52,4 @@
 - Publication CD dans Docker Hub :
   ![CD_Docker_Hub.png](misc/screenshots/CD_Docker_Hub.png)
 - Réactivation du job sonarCloud
+
