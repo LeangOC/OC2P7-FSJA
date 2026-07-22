@@ -53,3 +53,20 @@
   ![CD_Docker_Hub.png](misc/screenshots/CD_Docker_Hub.png)
 - Réactivation du job sonarCloud
 
+### develop5 
+1. Implémentation ELK
+  - docker compose -f docker-compose-elk.yml up -d
+    docker ps -a
+    ![docker-compose_ps.png](misc/screenshots/docker-compose_ps.png)
+
+  - Elasticsearch : http://localhost:9200 
+    ![ELK_Port_9200.png](misc/screenshots/ELK_Port_9200.png)
+
+  - Kibana : http://localhost:5601
+    ![ELK_Kibana_Port_5601_.png](misc/screenshots/ELK_Kibana_Port_5601_.png)
+
+2. Refactor Backend pour envoyer les logs vers ELK
+   - Implémentation : logback-spring.xml, application.properties, build.gradle
+   - $ ./gradlew bootRun
+   - Trace backend remontée sur Kibana
+    ![Kibana_back_logs.png](misc/screenshots/Kibana_back_logs.png)
