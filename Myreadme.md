@@ -73,5 +73,16 @@
 
 ### develop6
 1. logs frontend dans Kibana
-- dto/FrontendLog.java
-- 
+- implémentation : dto/FrontendLog.java, controller/FrontendLogController.java
+  API Post http://localhost:8080/api/logs :
+  ![Postman_Post_Api_logs_OK.png](My/MyEtapes/develop6/Postman_Post_Api_logs_OK.png)
+  logs dans logstash :
+  ![Postman_Trace_Console.png](My/MyEtapes/develop6/Postman_Trace_Console.png)
+- implémentation logstash structurés : refactorer FrontendLogController.java
+  Avant : ![LogStash_before.png](My/MyEtapes/develop6/LogStash_before.png)  
+  Après : ![LogStash_After.png](My/MyEtapes/develop6/LogStash_After.png)
+
+### develop7
+1. brancher le frontend
+   - Implémentation : services/logging.service.ts, app.components.ts
+   ![Logs_Console_Chrome_frontend_Api.png](My/MyEtapes/develop7/Logs_Console_Chrome_frontend_Api.png)
