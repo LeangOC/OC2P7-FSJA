@@ -70,3 +70,8 @@
    - $ ./gradlew bootRun
    - Trace backend remontée sur Kibana
     ![Kibana_back_logs.png](misc/screenshots/Kibana_back_logs.png)
+
+### develop6
+1. logs frontend dans Kibana
+- dto/FrontendLog.java
+- 
