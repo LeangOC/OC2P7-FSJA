@@ -86,3 +86,14 @@
 1. brancher le frontend
    - Implémentation : services/logging.service.ts, app.components.ts
    ![Logs_Console_Chrome_frontend_Api.png](My/MyEtapes/develop7/Logs_Console_Chrome_frontend_Api.png)
+
+### develop8
+1. Journaliser les événements : PersonDetailsComponent
+   ![Logstash_frontend_person_event.png](My/MyEtapes/develop8/Logstash_frontend_person_event.png)  
+2. Journaliser les événements : OrganizationDetailsComponent  
+    ![Logstash_frontend_Organization_event.png](My/MyEtapes/develop8/Logstash_frontend_Organization_event.png)  
+Et dans logstash :
+   ![Logstash_front.png](My/MyEtapes/develop8/Logstash_front.png)
+
+3. Configurer Kibana Data View ( déjà effectué avant )
+4. Configurer Kibana Visualisation
