@@ -82,13 +82,13 @@
      docker ps -a  
      ![ELK_Containers_Docker_Compose_Ps.png](misc/screenshots/ELK_Containers_Docker_Compose_Ps.png)
 
-   - Elasticsearch : http://localhost:9200
-     ![ELK_Port_9200.png](misc/screenshots/ELK_Port_9200.png)  
+   - Elasticsearch : http://localhost:9200  
+     ![ELK_Port_9200.png](misc/screenshots/ELK_Port_9200.png)      
 
-   - Kibana : http://localhost:5601
+   - Kibana : http://localhost:5601  
      ![ELK_Kibana_Port_5601_.png](misc/screenshots/ELK_Kibana_Port_5601_.png)  
    
-7. Refactor Backend pour envoyer les logs vers ELK
+7. Refactor Backend pour envoyer les logs vers ELK  
     - Implémentation : logback-spring.xml, application.properties, build.gradle
     - $ ./gradlew bootRun
     - Trace backend remontée sur Kibana
@@ -99,7 +99,7 @@
      API Post http://localhost:8080/api/logs :
      ![Postman_Post_Api_logs_OK.png](misc/screenshots/Postman_Post_Api_logs_OK.png)
      logs dans logstash :
-     ![Postman_Trace_Console.png](My/MyEtapes/develop6/Postman_Trace_Console.png)
+     ![Postman_Trace_Console.png](misc/screenshots/Postman_Trace_Console.png)
    - implémentation logstash structurés : refactorer FrontendLogController.java
      Avant : ![LogStash_before.png](misc/screenshots/LogStash_before.png)  
      Après : ![LogStash_After.png](misc/screenshots/LogStash_After.png)  
@@ -108,14 +108,14 @@
     - Implémentation : services/logging.service.ts, app.components.ts
       ![Logs_Console_Chrome_frontend_Api.png](misc/screenshots/Logs_Console_Chrome_frontend_Api.png)  
 
-10. Journalisation des évènements :
-    - PersonDetailsComponent
+10. Journalisation des évènements :  
+    - PersonDetailsComponent  
     ![Logstash_frontend_person_event.png](misc/screenshots/Logstash_frontend_person_event.png)  
-    - OrganizationDetailsComponent  
+    - OrganizationDetailsComponent     
       ![Logstash_frontend_Organization_event.png](misc/screenshots/Logstash_frontend_Organization_event.png) 
-    - Dans Logstash
-      ![Logstash_front.png](misc/screenshots/Logstash_front.png)
+    - Dans Logstash  
+      ![Logstash_front.png](misc/screenshots/Logstash_front.png)  
 
-11. Configurer Kibana visualisation 
-    - Dashboard :
+11. Configurer Kibana visualisation   
+    - Dashboard :  
     ![Dashboard_Journalisation_Logs.png](misc/screenshots/Dashboard_Journalisation_Logs.png)
