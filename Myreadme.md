@@ -52,23 +52,25 @@
      - $ docker compose ps :  
        ![Docker_Containers_microcrm.png](misc/screenshots/Docker_Containers_microcrm.png)
 
-4. Implémentation Pipeline CI : ci.yml 
-   - phase 1 : Images Docker front et back 
-      - Un pipeline CI opérationnel dans GitHub Actions :  
+4. Implémentation Pipeline CI dans Github Action :  
+   - phase 1 : Intégrer images Docker front et back dans le CI
+      - Pipeline CI opérationnel dans GitHub Actions :  
       ![CI_Operationnel.png](misc/screenshots/CI_Operationnel.png)  
       - Les tests existants sont exécutés automatiquement :   
       backend :     
       ![Tests_Backend.png](misc/screenshots/Tests_Backend.png)      
       frontend :    
       ![Tests_Frontend.png](misc/screenshots/Tests_Frontend.png)  
-   - phase 2 : SonarCloud
-   -  SonarCloud analysis : sonar-project.properties
-      ![SonarCloud_Analysis.png](misc/screenshots/SonarCloud_Analysis.png)
-      ![sonarCloud_Analysis_Success.png](misc/screenshots/sonarCloud_Analysis_Success.png)
-      ![SonarCloud_Analysis_Project.png](misc/screenshots/SonarCloud_Analysis_Project.png)
+   - phase 2 : Intégrer SonarCloud dans le CI :  
+      - Pipeline CI finale   
+      ![SonarCloud_Analysis.png](misc/screenshots/SonarCloud_Analysis.png)    
+      - Intégration SonarCloud dans CI avec succès  
+      ![sonarCloud_Analysis_Success.png](misc/screenshots/sonarCloud_Analysis_Success.png)  
+      - https://sonarcloud.io :  
+      ![SonarCloud_Analysis_Project.png](misc/screenshots/SonarCloud_Analysis_Project.png)  
 
-5. Implémentation pipeline CD 
-   - Refactor : ci.yml
-     ![Pipeline_ci_cd.png](misc/screenshots/Pipeline_ci_cd.png)
-   - Publication CD dans Docker Hub :
-     ![CD_Docker_Hub.png](misc/screenshots/CD_Docker_Hub.png)
+5. Implémentation pipeline CD  
+   - Refactor : ci.yml  
+     ![Pipeline_ci_cd.png](misc/screenshots/Pipeline_ci_cd.png)  
+   - Publication CD dans Docker Hub :  
+     ![CD_Docker_Hub.png](misc/screenshots/CD_Docker_Hub.png)  
