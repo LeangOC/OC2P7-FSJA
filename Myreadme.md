@@ -95,12 +95,12 @@
       ![Kibana_back_logs.png](misc/screenshots/Kibana_back_logs.png)  
 
 8. Refactor Frontend pour remonter les logs vers Kibana ( via API Rest vers backend)
-   - Implémentation : dto/FrontendLog.java, controller/FrontendLogController.java
-     API Post http://localhost:8080/api/logs :
-     ![Postman_Post_Api_logs_OK.png](misc/screenshots/Postman_Post_Api_logs_OK.png)
-     logs dans logstash :
-     ![Postman_Trace_Console.png](misc/screenshots/Postman_Trace_Console.png)
-   - implémentation logstash structurés : refactorer FrontendLogController.java
+   - Implémentation : dto/FrontendLog.java, controller/FrontendLogController.java  
+     API Post http://localhost:8080/api/logs :  
+     ![Postman_Post_Api_logs_OK.png](misc/screenshots/Postman_Post_Api_logs_OK.png)  
+     logs dans logstash :  
+     ![Postman_Trace_Console.png](misc/screenshots/Postman_Trace_Console.png)  
+   - implémentation logstash structurés : refactorer FrontendLogController.java  
      Avant : ![LogStash_before.png](misc/screenshots/LogStash_before.png)  
      Après : ![LogStash_After.png](misc/screenshots/LogStash_After.png)  
 
