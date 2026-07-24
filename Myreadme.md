@@ -1,21 +1,48 @@
 ### main
+
 1. Application est opérationnelle.
 - Démarrer le backend  : $ java -jar build/libs/microcrm-0.0.1-SNAPSHOT.jar
 - Démarrer le frontend : $ npx @angular/cli serve
 - http://localhost:4200/  : ![main_page_acceuil.png](misc/screenshots/main_page_acceuil.png)
 
-### develop < main
-1. Analyse du fichier Dockerfile d'origine :
+2. Analyse du fichier Dockerfile d'origine :
   - Trois images :
       - orion-microcrm-front : Linux Debian 12, Node.js version 22, Caddy + ressource Angular html
       - orion-microcrm-back  : Linux Ubuntu 22.04, Gradle 8.7, Java + ressource Spring-boot app.jar
       - orion-microcrm-standalone : images de front et back + supervisor  
       => Conclusion : Il y a une erreur ( EXPOSE 4200 pour le back)
+  - Front conteneur:
+      - docker build --target front -t orion-microcrm-front:latest .
+      - docker run -it --rm -p 80:80 -p 443:443 orion-microcrm-front:latest
+       ![Front_Container_Origin.png](misc/screenshots/Front_Container_Origin.png)  
+  - Back conteneur:
+      - docker build --target back -t orion-microcrm-back:latest .
+      - docker run -it --rm -p 8080:8080 orion-microcrm-back:latest
+        ![Back_Front_Containers_Origin.png](misc/screenshots/Back_Front_Containers_Origin.png)
+  - Standalone conteneur:
+      - docker build --target standalone -t orion-microcrm-standalone:latest .
+      - docker run -it --rm -p 8080:8080 -p 80:80 -p 443:443 orion-microcrm-standalone:latest
+      ![Standalone_Containers_Origin.png](misc/screenshots/Standalone_Containers_Origin.png)
 
+### develop
+1. Refonte du fichier Dockerfile origine :
+    - Correction des erreurs :  
+      - gradlew contenant symbole Control-M   
+      - Ports EXPOSE  
+    - Remplacer : Serveur web Caddy par Nginx  
 
-
-
-
+2. Démarrage des nouveaux conteneurs
+   - Front :
+     - $ docker build --target front -t microcrm-front .
+     - $ docker run -it --rm -p 80:80 microcrm-front:latest
+   - Back :
+     - docker build --target back -t microcrm-back:latest .
+     - docker run -it --rm -p 8080:8080 microcrm-back:latest
+     ![front_back_containers.png](misc/screenshots/front_back_containers.png)
+   - Standalone 
+     - docker build --target standalone -t microcrm-standalone:latest .
+     - docker run -it --rm -p 8080:8080 -p 80:80  microcrm-standalone:latest  
+     ![standalone_docker_container.png](misc/screenshots/standalone_docker_container.png)
 
 
 1. Implémentation ci.yml : phase 1
