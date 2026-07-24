@@ -97,24 +97,24 @@
 8. Refactor Frontend pour remonter les logs vers Kibana ( via API Rest vers backend)
    - Implémentation : dto/FrontendLog.java, controller/FrontendLogController.java
      API Post http://localhost:8080/api/logs :
-     ![Postman_Post_Api_logs_OK.png](My/MyEtapes/develop6/Postman_Post_Api_logs_OK.png)
+     ![Postman_Post_Api_logs_OK.png](misc/screenshots/Postman_Post_Api_logs_OK.png)
      logs dans logstash :
      ![Postman_Trace_Console.png](My/MyEtapes/develop6/Postman_Trace_Console.png)
    - implémentation logstash structurés : refactorer FrontendLogController.java
-     Avant : ![LogStash_before.png](My/MyEtapes/develop6/LogStash_before.png)  
-     Après : ![LogStash_After.png](My/MyEtapes/develop6/LogStash_After.png)  
+     Avant : ![LogStash_before.png](misc/screenshots/LogStash_before.png)  
+     Après : ![LogStash_After.png](misc/screenshots/LogStash_After.png)  
 
 9. Brancher le frontend ( Envoyer Api logs vers backend)
     - Implémentation : services/logging.service.ts, app.components.ts
-      ![Logs_Console_Chrome_frontend_Api.png](My/MyEtapes/develop7/Logs_Console_Chrome_frontend_Api.png)  
+      ![Logs_Console_Chrome_frontend_Api.png](misc/screenshots/Logs_Console_Chrome_frontend_Api.png)  
 
 10. Journalisation des évènements :
     - PersonDetailsComponent
-    ![Logstash_frontend_person_event.png](My/MyEtapes/develop8/Logstash_frontend_person_event.png)  
+    ![Logstash_frontend_person_event.png](misc/screenshots/Logstash_frontend_person_event.png)  
     - OrganizationDetailsComponent  
-      ![Logstash_frontend_Organization_event.png](My/MyEtapes/develop8/Logstash_frontend_Organization_event.png) 
+      ![Logstash_frontend_Organization_event.png](misc/screenshots/Logstash_frontend_Organization_event.png) 
     - Dans Logstash
-      ![Logstash_front.png](My/MyEtapes/develop8/Logstash_front.png)
+      ![Logstash_front.png](misc/screenshots/Logstash_front.png)
 
 11. Configurer Kibana visualisation 
     - Dashboard :
