@@ -5,6 +5,19 @@
 - http://localhost:4200/  : ![main_page_acceuil.png](misc/screenshots/main_page_acceuil.png)
 
 ### develop < main
+1. Analyse du fichier Dockerfile d'origine :
+  - Trois images :
+      - orion-microcrm-front : Linux Debian 12, Node.js version 22, Caddy + ressource Angular html
+      - orion-microcrm-back  : Linux Ubuntu 22.04, Gradle 8.7, Java + ressource Spring-boot app.jar
+      - orion-microcrm-standalone : images de front et back + supervisor  
+      => Conclusion : Il y a une erreur ( EXPOSE 4200 pour le back)
+
+
+
+
+
+
+
 1. Implémentation ci.yml : phase 1
    - Un pipeline CI opérationnel dans GitHub Actions :  ![CI_Operationnel.png](misc/screenshots/CI_Operationnel.png)
    - Les tests existants sont exécutés automatiquement :    
@@ -53,3 +66,4 @@
   ![CD_Docker_Hub.png](misc/screenshots/CD_Docker_Hub.png)
 - Réactivation du job sonarCloud
 
+### master < develop ( pour démonstration)
