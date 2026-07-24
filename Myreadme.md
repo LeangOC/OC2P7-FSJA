@@ -74,3 +74,10 @@
      ![Pipeline_ci_cd.png](misc/screenshots/Pipeline_ci_cd.png)  
    - Publication CD dans Docker Hub :  
      ![CD_Docker_Hub.png](misc/screenshots/CD_Docker_Hub.png)  
+
+### Exercice 2 
+
+6. Implémentation ELK
+   - docker compose -f docker-compose-elk.yml up -d
+     docker ps -a
+     ![docker-compose_ps.png](misc/screenshots/docker-compose_ps.png)
