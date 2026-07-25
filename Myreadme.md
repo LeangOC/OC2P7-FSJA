@@ -118,4 +118,7 @@
 
 11. Configurer Kibana visualisation   
     - Dashboard :  
-    ![Dashboard_Journalisation_Logs.png](misc/screenshots/Dashboard_Journalisation_Logs.png)
+    ![Dashboard_Journalisation_Logs.png](misc/screenshots/Dashboard_Journalisation_Logs.png)  
+
+# main1
+- Implémentation couverture JaCoCo
