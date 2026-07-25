@@ -5,8 +5,10 @@ import static org.junit.jupiter.api.Assertions.*;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.Date;
 
 import org.junit.jupiter.api.Test;
+import org.springframework.test.util.ReflectionTestUtils;
 
 class PersonTest {
 
@@ -36,6 +38,38 @@ class PersonTest {
         assertEquals("john@test.com", person.getEmail());
         assertEquals("010203", person.getPhone());
         assertEquals("Developer", person.getBio());
+    }
+
+    @Test
+    void shouldReturnId() {
+
+        Person person = new Person();
+
+        ReflectionTestUtils.setField(person, "id", 42L);
+
+        assertEquals(42L, person.getId());
+    }
+
+    @Test
+    void shouldReturnCreatedAt() {
+
+        Person person = new Person();
+        Date createdAt = new Date();
+
+        ReflectionTestUtils.setField(person, "createdAt", createdAt);
+
+        assertSame(createdAt, person.getCreatedAt());
+    }
+
+    @Test
+    void shouldReturnUpdatedAt() {
+
+        Person person = new Person();
+        Date updatedAt = new Date();
+
+        ReflectionTestUtils.setField(person, "updatedAt", updatedAt);
+
+        assertSame(updatedAt, person.getUpdatedAt());
     }
 
     @Test
