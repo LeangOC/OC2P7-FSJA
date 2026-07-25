@@ -3,11 +3,11 @@ name: Continuous Integration
 on:
   push:
     branches:
-      - main
-      - develop
+      - develop3_Jacoco
+
   pull_request:
     branches:
-      - main
+      - develop3_Jacoco
 
 permissions:
   contents: read
