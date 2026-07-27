@@ -31,9 +31,10 @@
     <div class="columns">
       <div class="column">
         <div class="field">
-          <label class="label">First name *</label>
+          <label for="firstName" class="label">First name *</label>
           <div class="control">
             <input
+              id="firstName"
               class="input {{
                 firstName.invalid && (firstName.dirty || firstName.touched)
                   ? 'is-danger'
@@ -57,9 +58,10 @@
           </p>
         </div>
         <div class="field">
-          <label class="label">Last name *</label>
+          <label for="Last name" class="label">Last name *</label>
           <div class="control">
             <input
+              id="Last name"
               class="input {{
                 lastName.invalid && (lastName.dirty || lastName.touched)
                   ? 'is-danger'
@@ -83,9 +85,10 @@
           </p>
         </div>
         <div class="field">
-          <label class="label">Email</label>
+          <label for="Email" class="label">Email</label>
           <div class="control">
             <input
+              id="Email"
               class="input {{
                 email.invalid && (email.dirty || email.touched)
                   ? 'is-danger'
@@ -108,9 +111,10 @@
           </p>
         </div>
         <div class="field">
-          <label class="label">Phone</label>
+          <label for="Phone" class="label">Phone</label>
           <div class="control">
             <input
+              id="Phone"
               class="input {{
                 phone.invalid && (phone.dirty || phone.touched)
                   ? 'is-danger'
@@ -135,9 +139,10 @@
       </div>
       <div class="column">
         <div class="field">
-          <label class="label">Bio</label>
+          <label for="Bio" class="label">Bio</label>
           <div class="control">
             <textarea
+              id="Bio"
               class="textarea {{
                 bio.invalid && (bio.dirty || bio.touched) ? 'is-danger' : ''
               }}"

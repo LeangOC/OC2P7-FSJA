@@ -120,5 +120,7 @@
     - Dashboard :  
     ![Dashboard_Journalisation_Logs.png](misc/screenshots/Dashboard_Journalisation_Logs.png)  
 
-# main1
-- Implémentation couverture JaCoCo
+# main < develop
+ - Implémentation Couverture pour SonarCloud : Backend JaCoCo et Frontend LCOV
+   https://sonarcloud.io/projects  
+   ![SonarCloud_Coverage.png](misc/screenshots/SonarCloud_Coverage.png)

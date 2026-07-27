@@ -61,7 +61,7 @@ jobs:
 
       - name: Run Angular tests
         working-directory: front
-        run: npm test -- --watch=false --browsers=ChromeHeadless --code-coverage
+        run: npm test -- --watch=false --browsers=ChromeHeadless
 
       ####################################################
       # SonarCloud

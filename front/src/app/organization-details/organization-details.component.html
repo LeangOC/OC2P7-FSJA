@@ -29,12 +29,13 @@
     <div class="columns">
       <div class="column">
         <div class="field">
-          <label class="label">Name *</label>
+          <label for="name" class="label">Name *</label>
           <div class="control">
             <input
+              id="name"
               class="input {{
-                name.invalid && (name.dirty || name.touched) ? 'is-danger' : ''
-              }}"
+    name.invalid && (name.dirty || name.touched) ? 'is-danger' : ''
+  }}"
               required
               type="text"
               placeholder="Orion Inc."
