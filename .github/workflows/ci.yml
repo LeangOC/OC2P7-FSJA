@@ -61,7 +61,7 @@ jobs:
 
       - name: Run Angular tests
         working-directory: front
-        run: npm test -- --watch=false --browsers=ChromeHeadless
+        run: npm test -- --watch=false --browsers=ChromeHeadless --code-coverage
 
       ####################################################
       # SonarCloud
@@ -121,7 +121,6 @@ jobs:
           push: true
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/microcrm-back:latest
-
       ####################################################
       # Frontend Image
       ####################################################
