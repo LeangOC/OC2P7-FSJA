@@ -160,10 +160,13 @@
         <div class="field has-addons">
           <div class="control is-expanded">
             <div class="select is-large is-fullwidth">
+              <label for="organizationSelect" class="label">
+                Organization
+              </label>
               <select
+                id="organizationSelect"
                 [(ngModel)]="selectedOrganization"
-                [ngModelOptions]="{ standalone: true }"
-              >
+                [ngModelOptions]="{ standalone: true }">
                 <option [ngValue]="null">Add organization</option>
                 <option [ngValue]="org" *ngFor="let org of organizations">
                   {{ org.name }}
@@ -172,16 +175,23 @@
             </div>
           </div>
           <p class="control">
-            <button class="button is-primary is-large">
-              <span
-                class="has-text-weight-bold"
-                (click)="addSelectedOrganization()"
-                >+</span
-              >
+            <button
+              type="button"
+              class="button is-primary is-large"
+              (click)="addSelectedOrganization()"
+              aria-label="Add organization"
+            >
+              <span class="has-text-weight-bold">+</span>
             </button>
           </p>
         </div>
         <table class="table is-fullwidth">
+          <thead>
+          <tr>
+            <th>Organization</th>
+            <th>Actions</th>
+          </tr>
+          </thead>
           <tbody>
             <tr *ngFor="let org of organizations">
               <td>
