@@ -240,3 +240,4 @@ Elle contient notamment :
 # Auteur
 
 Projet réalisé dans le cadre de la formation **Lead Développeur Java / Angular** d'OpenClassrooms.
+
