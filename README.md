@@ -45,7 +45,7 @@ Le projet repose sur une application **MicroCRM** composée :
 
 ---
 
-# Architecture cible
+# Architecture
 ![Architecture_cible.png](misc/screenshots/Architecture_cible.png)
 
 
