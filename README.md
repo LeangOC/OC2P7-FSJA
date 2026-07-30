@@ -1,155 +1,142 @@
-<p align="center">
-   <img src="./front/src/favicon.png" width="192px" />
-</p>
+# MicroCRM – CI/CD & DevOps
 
-# MicroCRM (P7 - Développeur Full-Stack - Java et Angular - Mettez en œuvre l'intégration et le déploiement continu d'une application Full-Stack)
+## Présentation
 
-MicroCRM est une application de démonstration basique ayant pour être objectif de servir de socle pour le module "P7 - Développeur Full-Stack".
+Ce projet a été réalisé dans le cadre de la formation **Lead Développeur Java / Angular** d'OpenClassrooms.
 
-L'application MicroCRM est une implémentation simplifiée d'un ["CRM" (Customer Relationship Management)](https://fr.wikipedia.org/wiki/Gestion_de_la_relation_client). Les fonctionnalités sont limitées à la création, édition et la visualisations des individus liés à des organisations.
+L'objectif est de mettre en œuvre une chaîne **CI/CD complète** pour une application Full Stack, puis d'y intégrer des outils de qualité logicielle, de déploiement automatisé et de supervision.
 
-![Page d'accueil](./misc/screenshots/screenshot_1.png)
-![Édition de la fiche d'un individu](./misc/screenshots/screenshot_2.png)
+Le projet repose sur une application **MicroCRM** composée :
 
-## Code source
+- d'un frontend Angular ;
+- d'un backend Spring Boot ;
+- d'une base de données HSQLDB ;
+- d'un pipeline GitHub Actions ;
+- de Docker et Docker Hub ;
+- de SonarCloud pour l'analyse statique ;
+- de la stack ELK (Elasticsearch, Logstash, Kibana) pour le monitoring.
 
-### Organisation
+---
 
-Ce [monorepo](https://en.wikipedia.org/wiki/Monorepo) contient les 2 composantes du projet "MicroCRM":
+# Technologies utilisées
 
-- La partie serveur (ou "backend"), en Java SpringBoot 3;
-- La partie cliente (ou "frontend"), en Angular 17.
+## Backend
 
-### Démarrer avec les sources
+- Java 17
+- Spring Boot 3
+- Gradle
 
-#### Serveur
+## Frontend
 
-##### Dépendances
+- Angular 17
+- TypeScript
+- Node.js 20
 
-- [OpenJDK >= 17](https://openjdk.org/)
+## DevOps
 
-##### Procédure
+- GitHub Actions
+- Docker
+- Docker Compose
+- Docker Hub
+- SonarCloud
+- Elasticsearch
+- Logstash
+- Kibana
 
-1. Se positionner dans le répertoire `back` avec une invite de commande:
+---
 
-   ```shell
-   cd back
-   ```
+# Architecture cible
+![Architecture_cible.png](misc/screenshots/Architecture_cible.png)
 
-2. Construire le JAR:
 
-   ```shell
-   # Sur Linux
-   ./gradlew build
 
-   # Sur Windows
-   gradlew.bat build
-   ```
+---
 
-3. Démarrer le service:
+# Fonctionnalités mises en œuvre
 
-   ```shell
-   java -jar build/libs/microcrm-0.0.1-SNAPSHOT.jar
-   ```
+- Intégration continue avec GitHub Actions
+- Compilation automatique du backend
+- Compilation automatique du frontend
+- Exécution des tests automatisés
+- Analyse de qualité avec SonarCloud
+- Construction des images Docker
+- Publication automatique sur Docker Hub
+- Monitoring applicatif avec ELK
+- Centralisation des logs frontend et backend
 
-Puis ouvrir l'URL http://localhost:8080 dans votre navigateur.
+---
 
-#### Client
+# Pipeline CI/CD
 
-##### Dépendances
+Le pipeline GitHub Actions réalise automatiquement les opérations suivantes :
 
-- [NPM >= 10.2.4](https://www.npmjs.com/)
+1. Récupération du code source
+2. Compilation du backend Spring Boot
+3. Exécution des tests backend
+4. Compilation du frontend Angular
+5. Exécution des tests frontend
+6. Analyse SonarCloud
+7. Construction des images Docker
+8. Publication des images sur Docker Hub
 
-##### Procédure
+---
 
-1. Se positionner dans le répertoire `front` avec une invite de commande:
+# Prérequis
 
-   ```shell
-   cd front
-   ```
+Avant d'exécuter le projet, installer :
 
-2. (La première fois seulement) Installer les dépendances NodeJS:
+- Git
+- Java 17
+- Node.js 20
+- Docker Desktop
+- Docker Compose
 
-   ```shell
-   npm install
-   ```
+---
 
-3. Démarrer le service de développement:
+# Installation
 
-   ```shell
-   npx @angular/cli serve
-   ```
+## Cloner le dépôt
 
-Puis ouvrir l'URL http://localhost:4200 dans votre navigateur.
+```bash
+git clone https://github.com/LeangOC/OC2P7-FSJA.git
 
-### Exécution des tests
-
-#### Client
-
-**Dépendances**
-
-- Google Chrome ou Chromium
-
-Dans votre terminal:
-
-```shell
-cd front
-CHROME_BIN=</path/to/google/chrome> npm test
+cd OC2P7-FSJA
 ```
 
-#### Serveur
+---
 
-Dans votre terminal:
+## Lancer l'application
 
-```shell
-cd back
-./gradlew test
+```bash
+docker compose up -d
 ```
 
-### Images Docker
+---
 
-#### Client
+## Vérifier les conteneurs
 
-##### Construire l'image
-
-```shell
-docker build --target front -t orion-microcrm-front:latest .
+```bash
+docker ps
 ```
 
-##### Exécuter l'image
+---
 
-```shell
-docker run -it --rm -p 80:80 -p 443:443 orion-microcrm-front:latest
+# Monitoring ELK
+
+La stack ELK peut être démarrée avec :
+
+```bash
+docker compose -f docker-compose-elk.yml up -d
 ```
 
-L'application sera disponible sur https://localhost.
+Les services sont accessibles aux adresses suivantes :
 
-#### Serveur
+| Service | URL |
+|----------|-----|
+| Elasticsearch | http://localhost:9200 |
+| Kibana | http://localhost:5601 |
 
-##### Construire l'image
+---
 
-```shell
-docker build --target back -t orion-microcrm-back:latest .
-```
 
-##### Exécuter l'image
 
-```shell
-docker run -it --rm -p 8080:8080 orion-microcrm-back:latest
-```
-
-L'API sera disponible sur http://localhost:8080.
-
-#### Tout en un
-
-```shell
-docker build --target standalone -t orion-microcrm-standalone:latest .
-```
-
-##### Exécuter l'image
-
-```shell
-docker run -it --rm -p 8080:8080 -p 80:80 -p 443:443 orion-microcrm-standalone:latest
-```
-
-L'application sera disponible sur https://localhost et l'API sur http://localhost:8080.
